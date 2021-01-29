@@ -9,9 +9,13 @@
 
 @interface JJSemiModalView ()
 
+//弹出半屏框
 @property (strong, nonatomic) UIView *contentView;
+//弹出框背景,点击可复原
 @property (strong, nonatomic) UIControl *closeControl;
+//缩小视图,背面缩小的是一个图片
 @property (strong, nonatomic) UIImageView *maskImageView;
+//外部传入,是一个VC
 @property (nonatomic, strong) UIViewController *baseViewController;
 
 
@@ -28,6 +32,7 @@
         [self addSubview:self.maskImageView];
         [self addSubview:self.closeControl];
         [self addSubview:self.contentView];
+//        self.backgroundColor = [UIColor yellowColor];
         
         self.contentView.frame = [self contentViewFrameWithSize:size];
         self.baseViewController = baseViewController;
